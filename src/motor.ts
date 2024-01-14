@@ -1,7 +1,7 @@
-import {pacientes, Pacientes} from "./modelo";
+import {Pacientes} from "./modelo";
 import "./style.css";
 
-const obtenPacientesAsignadosAPediatria = (
+export const obtenPacientesAsignadosAPediatria = (
     pacientes: Pacientes[]
   ): Pacientes[] => {
     const pacientesDePediatria : Pacientes[] = [];
@@ -12,7 +12,7 @@ const obtenPacientesAsignadosAPediatria = (
     return pacientesDePediatria
   };
 
-  const obtenPacientesAsignadosAPediatriaYMenorDeDiezAnios = (
+export const obtenPacientesAsignadosAPediatriaYMenorDeDiezAnios = (
     pacientes: Pacientes[]
   ): Pacientes[] => {
     const pacientesPediatriaMenos10 : Pacientes[] = [];
@@ -24,8 +24,3 @@ const obtenPacientesAsignadosAPediatria = (
     }
     return pacientesPediatriaMenos10;
   };
-
-const listaDePacientes = obtenPacientesAsignadosAPediatria(pacientes);
-const resultadoMenores10 =obtenPacientesAsignadosAPediatriaYMenorDeDiezAnios(pacientes);
-console.log({listaDePacientes});
-console.log({resultadoMenores10})
