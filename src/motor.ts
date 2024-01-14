@@ -29,7 +29,7 @@ export const activarProtocoloUrgencia = (pacientes: Pacientes[]): boolean => {
   let activarProctolo = false;
   for (let i = 0; i < pacientes.length; i++) {
     if (pacientes[i].frecuenciaCardiaca > 100 && pacientes[i].temperatura > 39) {
-      activarProctolo = true;
+      return true;
     }
   }
   return activarProctolo;
