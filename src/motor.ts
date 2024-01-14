@@ -27,10 +27,10 @@ export const obtenPacientesAsignadosAPediatriaYMenorDeDiezAnios = (
 
 export const activarProtocoloUrgencia = (pacientes: Pacientes[]): boolean => {
   let activarProctolo = false;
-
-  // Tu implementación aquí :)
-  for (let i = 0; i < pacientes.length && pacientes[i].frecuenciaCardiaca > 100 && pacientes[i].temperatura > 39; i++) {
-    activarProctolo = true;
+  for (let i = 0; i < pacientes.length; i++) {
+    if (pacientes[i].frecuenciaCardiaca > 100 && pacientes[i].temperatura > 39) {
+      activarProctolo = true;
+    }
   }
   return activarProctolo;
 };
