@@ -1,4 +1,4 @@
-import {Pacientes} from "./modelo";
+import {Pacientes, NumeroPacientesPorEspecialidad} from "./modelo";
 import "./style.css";
 
 export const obtenPacientesAsignadosAPediatria = (
@@ -43,4 +43,29 @@ export const HayPacientesDePediatria = (pacientes: Pacientes[]): boolean => {
     } 
   }
   return true;
+};
+
+export const cuentaPacientesPorEspecialidad = (
+  pacientes: Pacientes[]
+): NumeroPacientesPorEspecialidad => {
+  const cantidadPacientes : NumeroPacientesPorEspecialidad ={
+    medicoDeFamilia: 0,
+    pediatria: 0,
+    cardiologia: 0
+  }
+
+  for (let i = 0; i < pacientes.length; i++) {
+      switch (pacientes[i].especialidad) {
+        case "Medico de familia":
+          cantidadPacientes.medicoDeFamilia++;
+          break;
+        case "Pediatra":
+          cantidadPacientes.pediatria++;
+          break;
+        case "Cardiólogo":
+          cantidadPacientes.cardiologia++;
+          break;
+      }
+  }
+  return cantidadPacientes;
 };
