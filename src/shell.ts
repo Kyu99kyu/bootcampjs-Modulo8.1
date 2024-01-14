@@ -1,11 +1,11 @@
 import {obtenPacientesAsignadosAPediatria, obtenPacientesAsignadosAPediatriaYMenorDeDiezAnios, activarProtocoloUrgencia,HayPacientesDePediatria,cuentaPacientesPorEspecialidad} from "./motor";
-import {pacientes} from "./modelo";
+import {Pacientes, pacientes, NumeroPacientesPorEspecialidad} from "./modelo";
 
-const listaDePacientes = obtenPacientesAsignadosAPediatria(pacientes);
-const resultadoMenores10 = obtenPacientesAsignadosAPediatriaYMenorDeDiezAnios(pacientes);
-const activarProtocolo = activarProtocoloUrgencia(pacientes);
-const finDeTurno = HayPacientesDePediatria(pacientes);
-const listaDeEspecialistas = cuentaPacientesPorEspecialidad(pacientes);
+const listaDePacientes : Pacientes[] = obtenPacientesAsignadosAPediatria(pacientes);
+const resultadoMenores10 :Pacientes[] = obtenPacientesAsignadosAPediatriaYMenorDeDiezAnios(pacientes);
+const activarProtocolo : boolean = activarProtocoloUrgencia(pacientes);
+const finDeTurno : boolean = HayPacientesDePediatria(pacientes);
+const listaDeEspecialistas : NumeroPacientesPorEspecialidad  = cuentaPacientesPorEspecialidad(pacientes);
 
 console.log({listaDePacientes});
 console.log({resultadoMenores10})
