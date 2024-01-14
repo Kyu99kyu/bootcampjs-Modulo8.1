@@ -39,8 +39,8 @@ export const HayPacientesDePediatria = (pacientes: Pacientes[]): boolean => {
   let paCasa = false;
   for (let i = 0; i < pacientes.length; i++) {
     if (pacientes[i].especialidad === "Pediatra") {
-      return true;
+      return paCasa;
     } 
   }
-  return paCasa;
+  return true;
 };
