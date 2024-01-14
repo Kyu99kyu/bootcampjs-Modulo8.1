@@ -10,7 +10,7 @@ export const obtenPacientesAsignadosAPediatria = (
              j++;
     }
     return pacientesDePediatria
-  };
+};
 
 export const obtenPacientesAsignadosAPediatriaYMenorDeDiezAnios = (
     pacientes: Pacientes[]
@@ -23,4 +23,14 @@ export const obtenPacientesAsignadosAPediatriaYMenorDeDiezAnios = (
       }
     }
     return pacientesPediatriaMenos10;
-  };
+};
+
+export const activarProtocoloUrgencia = (pacientes: Pacientes[]): boolean => {
+  let activarProctolo = false;
+
+  // Tu implementación aquí :)
+  for (let i = 0; i < pacientes.length && pacientes[i].frecuenciaCardiaca > 100 && pacientes[i].temperatura > 39; i++) {
+    activarProctolo = true;
+  }
+  return activarProctolo;
+};
